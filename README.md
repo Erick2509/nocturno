@@ -34,3 +34,11 @@ Sube esta carpeta a un repositorio privado de GitHub y conecta el repositorio en
 - `Missing or insufficient permissions`: revisa que `usuarios/{UID}` exista, rol/activo sean correctos y reglas estén publicadas.
 - Si no aparecen agentes recién creados, revisa Firestore y Authentication. Si el perfil no se guardó, elimina la cuenta huérfana desde Authentication antes de repetir.
 - No compartas tu contraseña de administrador ni un JSON de cuenta de servicio.
+
+
+## Actualización: turnos Diurno/Nocturno
+- En Turnos selecciona agente, servicio activo, Diurno o Nocturno y fechas de inicio/fin.
+- En Actividades se muestra el tipo del turno seleccionado.
+- IMPORTANTE: publica el archivo `firestore.rules` actualizado en Firebase Console → Firestore → Reglas antes de crear nuevos turnos o actividades.
+- Los turnos creados antes de esta actualización aparecen como «Sin clasificar (anterior)»; crea un turno nuevo para asignarles el tipo. Las reglas nuevas no permiten asignar actividades a turnos antiguos sin tipo.
+- Si el selector Servicio está vacío, crea y activa un servicio desde la sección Servicios.
